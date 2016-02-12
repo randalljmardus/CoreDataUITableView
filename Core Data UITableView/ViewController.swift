@@ -33,6 +33,15 @@ class ViewController: UIViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         
         navigationItem.rightBarButtonItem = addButton
+        
+        do {
+            let request = NSFetchRequest(entityName: "User")
+            if let result = try context?.executeFetchRequest(request) as? [User] {
+            users = result
+            }
+        } catch {
+            print("We couldn't fetch.")
+        }
     }
 
     override func didReceiveMemoryWarning() {
