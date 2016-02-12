@@ -14,6 +14,8 @@
 		15487EBB1C6E569700CA6E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15487EB91C6E569700CA6E13 /* LaunchScreen.storyboard */; };
 		15487EC31C6E90B900CA6E13 /* CDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15487EC21C6E90B900CA6E13 /* CDHelper.swift */; };
 		15487EC61C6E90DE00CA6E13 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15487EC41C6E90DE00CA6E13 /* Model.xcdatamodeld */; };
+		15487EC91C6E91C300CA6E13 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15487EC71C6E91C300CA6E13 /* User+CoreDataProperties.swift */; };
+		15487ECA1C6E91C300CA6E13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15487EC81C6E91C300CA6E13 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		15487EBC1C6E569700CA6E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15487EC21C6E90B900CA6E13 /* CDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelper.swift; sourceTree = "<group>"; };
 		15487EC51C6E90DE00CA6E13 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		15487EC71C6E91C300CA6E13 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		15487EC81C6E91C300CA6E13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		15487EA41C6E569700CA6E13 = {
 			isa = PBXGroup;
 			children = (
+				15487EC71C6E91C300CA6E13 /* User+CoreDataProperties.swift */,
+				15487EC81C6E91C300CA6E13 /* User.swift */,
 				15487EAF1C6E569700CA6E13 /* Core Data UITableView */,
 				15487EAE1C6E569700CA6E13 /* Products */,
 			);
@@ -143,7 +149,9 @@
 			files = (
 				15487EB31C6E569700CA6E13 /* ViewController.swift in Sources */,
 				15487EB11C6E569700CA6E13 /* AppDelegate.swift in Sources */,
+				15487ECA1C6E91C300CA6E13 /* User.swift in Sources */,
 				15487EC31C6E90B900CA6E13 /* CDHelper.swift in Sources */,
+				15487EC91C6E91C300CA6E13 /* User+CoreDataProperties.swift in Sources */,
 				15487EC61C6E90DE00CA6E13 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
