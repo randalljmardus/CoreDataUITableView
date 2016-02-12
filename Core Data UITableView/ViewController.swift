@@ -11,7 +11,7 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    var names = [String]()
+    var users = [User]()
     let tableView = UITableView()
     var newNameInput: UITextField?
     var context: NSManagedObjectContext?
@@ -58,19 +58,32 @@ class ViewController: UIViewController {
     
     func addNewUser (alert: UIAlertAction!) {
         guard let name = newNameInput?.text else {return}
-        names.append(name)
+        
+        guard let context = context else {return}
+        guard let user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User else {return}
+        
+        user.name = name
+        
+        do {
+            try context.save()
+        } catch {
+            print("There was a problem saving.")
+            return
+        }
+        
+        users.append(user)
         tableView.reloadData()
     }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return names.count
+    return users.count
 }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = names[indexPath.row]
+        cell.textLabel?.text = users[indexPath.row].name
         return cell
     }
     
@@ -82,7 +95,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            names.removeAtIndex(indexPath.row)
+            users.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
