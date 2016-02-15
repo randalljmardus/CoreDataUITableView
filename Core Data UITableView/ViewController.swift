@@ -104,6 +104,17 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            let user = users[indexPath.row]
+            context?.deleteObject(user)
+            
+            do {
+                try context?.save()
+            } catch {
+                print("There was a problem saving.")
+                return
+            }
+            
             users.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
